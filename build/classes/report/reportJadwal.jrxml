@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="57316b21-a518-47fe-ac33-329ab037eb8b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tb_tr_schedule.`schedule_date` AS tb_tr_schedule_schedule_date,
+     tb_tr_schedule.`emp_id` AS tb_tr_schedule_emp_id,
+     tb_tr_schedule.`emp_name` AS tb_tr_schedule_emp_name,
+     tb_tr_schedule.`div_name` AS tb_tr_schedule_div_name,
+     tb_tr_schedule.`position_name` AS tb_tr_schedule_position_name,
+     tb_tr_schedule.`att_type` AS tb_tr_schedule_att_type
+FROM
+     `tb_tr_schedule` tb_tr_schedule]]>
+	</queryString>
+	<field name="tb_tr_schedule_schedule_date" class="java.lang.String"/>
+	<field name="tb_tr_schedule_emp_id" class="java.lang.Integer"/>
+	<field name="tb_tr_schedule_emp_name" class="java.lang.String"/>
+	<field name="tb_tr_schedule_div_name" class="java.lang.String"/>
+	<field name="tb_tr_schedule_position_name" class="java.lang.String"/>
+	<field name="tb_tr_schedule_att_type" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement uuid="7cf3285b-c339-489c-9661-3f688e849a25" mode="Opaque" x="0" y="0" width="555" height="95" backcolor="#000000"/>
+				<staticText>
+					<reportElement uuid="65a40730-f61a-4d77-b3bf-26e8054236c9" style="Title" x="0" y="0" width="433" height="95" forecolor="#64FF5A"/>
+					<textElement>
+						<font fontName="Segoe UI" size="34" isBold="false"/>
+					</textElement>
+					<text><![CDATA[LAPORAN JADWAL WFO/WFH/WFC]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="929d9040-e0fb-4263-a24e-f9b6302213bb" mode="Opaque" x="0" y="100" width="555" height="32" forecolor="#000000" backcolor="#0F140F"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="93cb8539-0d55-487e-aec3-7ac1c0c84614" x="409" y="12" width="144" height="20" forecolor="#64FF5A"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image hAlign="Right">
+				<reportElement uuid="e37bd9b6-d141-4ce3-bc22-55dbfd766854" x="433" y="0" width="122" height="95"/>
+				<imageExpression><![CDATA["C:\\Users\\Thinkpad\\Documents\\NetBeansProjects\\EmeradApp - Backup\\src\\img\\AppLogoFull - Main.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="93a61a65-6f36-4a53-b07b-e7080aa34799" style="Column header" x="0" y="7" width="92" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="002e30b9-ed42-4194-94be-95441a1356cd" style="Column header" x="92" y="7" width="65" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[NIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="48a51885-9ea2-4c80-852b-6707a4b888d4" style="Column header" x="157" y="7" width="119" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c99c0193-04fa-441f-b16c-bff5c022d68a" style="Column header" x="276" y="7" width="92" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Divisi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fd4bad87-90e0-42ba-bd3c-86607e18671a" style="Column header" x="368" y="7" width="92" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jabatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7a0dd668-d214-4525-883d-52916db47ed0" style="Column header" x="460" y="7" width="92" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tipe Absen]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement uuid="db6867ec-5a75-4429-ab7a-d6025e9e8b62" style="Row" mode="Opaque" x="0" y="0" width="555" height="18"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="8ea694ed-b6c6-42fa-a9ef-e91271633e85" style="Detail" positionType="Float" x="0" y="0" width="92" height="18"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_tr_schedule_schedule_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="6fab0e9f-f932-4cae-9bf9-0ccd57c8467d" style="Detail" positionType="Float" x="92" y="0" width="65" height="18"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_tr_schedule_emp_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="df71bb68-38c3-498a-9c97-b19c0a910d56" style="Detail" positionType="Float" x="157" y="0" width="119" height="18"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_tr_schedule_emp_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="595583d0-7099-41a3-bd17-00ab000455c7" style="Detail" positionType="Float" x="276" y="0" width="92" height="18"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_tr_schedule_div_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="1467d6ba-920b-499b-9ac6-7ae6313d944c" style="Detail" positionType="Float" x="368" y="0" width="92" height="18"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_tr_schedule_position_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="154935ba-16b7-41bf-987b-1286e98bd1e3" style="Detail" positionType="Float" x="460" y="0" width="92" height="18"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tb_tr_schedule_att_type}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement uuid="5729f032-4930-42c1-bf7d-1497836c52bb" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="743d81e6-0fe5-4516-939e-ba9e169a3f36" mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="a1ca0c2a-14f0-4f96-a0fb-62abe89c8b46" style="Column header" x="513" y="0" width="40" height="20" forecolor="#64FF5A"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="46624332-47f2-42fb-bb17-f309c94f85c4" style="Column header" x="433" y="0" width="80" height="20" forecolor="#64FF5A"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="f3ec8259-ba38-4c9d-8b77-ce548de21bb5" style="Column header" x="2" y="1" width="197" height="20" forecolor="#64FF5A"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
